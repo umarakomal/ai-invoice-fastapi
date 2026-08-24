@@ -114,7 +114,7 @@ async def extract_invoice(invoice_id: str, db: Session = Depends(get_db)):
         
         # Step E: Gemini model ko call karna (Structured JSON response ke sath)
         response = client.models.generate_content(
-        model='gemini-2.0-flash',
+        model='gemini-3.6-flash',
             contents=[uploaded_file, prompt],
             config={
                 "response_mime_type": "application/json"
